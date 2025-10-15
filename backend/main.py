@@ -25,14 +25,6 @@ app.add_middleware(
 class Queryrequest(BaseModel):
     query: str
     
-
-# class FileModel(FileBase):
-#     id: int
-
-#     class Config:
-#         orm_mode = True
-
-
 # creating the database dependencies
 
 def get_db():
