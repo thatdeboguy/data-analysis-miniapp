@@ -1,0 +1,75 @@
+CSV Upload Idea:
+The idea utilized here is of the structure of one table, I created a database orm model that includes this specific structure
+    id = Column(Integer, primary_key=True, index=True)
+    company_name = Column(String, index=True)
+    city = Column(String, index=True)
+    employees = Column(Integer)
+    revenue = Column(Float)
+That means each csv file could have a different name but must have this table column names. 
+
+Frontend Notes:
+Sql query input can accept both Natural language and SQL queries hence it is compulsory to add a semi-colon at the end.
+
+
+Technologies Used and Approach Followed
+Technologies Used
+Backend:
+
+FastAPI – It was required to be used. its knows for it's speed,  and modern syntax. it also has built-in support for asynchronous operations. It is easy to build RESTful APIs, as well as integrating easily with Pydantic and SQLAlchemy.
+
+SQLite – A lightweight, file-based database that requires no server setup, perfect for quick testing and small projects like this mini app.
+
+SQLAlchemy – Used as the ORM (Object Relational Mapper) to interact with the SQLite database efficiently and securely. It abstracts raw SQL queries while still allowing flexibility to execute raw SQL when needed.
+
+Pandas – Used for reading and processing CSV files before saving the data into the database. It makes handling tabular data quick and reliable.
+
+CORSMIddleware - TO handle cross-origin-resource-sharing issue.
+
+Frontend:
+
+React – Provides a dynamic, component-based structure for building modern UIs. It allows smooth updates when new data is fetched from the backend.
+
+Axios – Handles HTTP requests between the frontend and backend seamlessly, making API integration straightforward and easy.
+
+Bootstrap – Used for styling the frontend with a clean, responsive layout without writing custom CSS from scratch.
+
+React Data Table Component – Simplifies rendering of tabular data, supports sorting, pagination, and improves data readability.
+
+Approach Followed
+
+Backend Development (FastAPI + SQLite)
+
+Created a FastAPI app to handle two main endpoints:
+
+/uploadfile: For uploading CSV files. The file is read with Pandas, and the data is stored in an SQLite table.
+
+/sqlquery: Accepts raw SQL queries as strings, executes them safely against the database, and returns results as JSON.
+
+Implemented error handling for invalid queries and unexpected data formats.
+
+Frontend Development (React)
+
+Designed a user interface with two main sections:
+
+A CSV Upload Section: Allows users to upload a file to the backend.
+
+A Query Section: Lets users write and execute SQL queries, displaying results in a Bootstrap-styled data table.
+
+Used Axios to communicate with the FastAPI endpoints and React state to dynamically update query results.
+
+Integration
+
+Connected the frontend and backend so the user can upload a CSV, run queries, and view the results in a single flow.
+
+The frontend sends the query as JSON to the backend, and the backend returns results in a structured JSON format, which is rendered into a table.
+
+Testing and Validation
+
+Used Postman to test all backend endpoints independently.
+
+Used sqlite viewer to avtively view my database as changes are being made.
+
+Verified the full flow (upload → query → display) via the React app.
+
+Ensured proper error messages for unsupported file formats or malformed queries.
+

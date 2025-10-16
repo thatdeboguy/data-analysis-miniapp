@@ -82,7 +82,7 @@ The frontend will be running on http://localhost:3000
 - Once uploaded, enter an SQL query such as:
 ```sql
     SELECT * FROM csv_files WHERE city = 'Lagos';
-    ```
+```
 - click Run Query
 - View the results displayed in a formatted, paginated table.
 
