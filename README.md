@@ -64,6 +64,7 @@ The backend will be running on http://127.0.0.1:8000
 ---
 ### 3 Frontend Setup (React + Bootstrap)
 ```bash
+cd frontend
 cd claridad
 npm install
 npm install bootstrap react-data-table-component react-router-dom axios
@@ -85,4 +86,6 @@ The frontend will be running on http://localhost:3000
 ```
 - click Run Query
 - View the results displayed in a formatted, paginated table.
+- Natural language could also be used, 'show all companies in lagos'
+- click run and then view the same result.
 

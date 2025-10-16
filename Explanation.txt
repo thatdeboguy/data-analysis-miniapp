@@ -10,6 +10,9 @@ That means each csv file could have a different name but must have this table co
 Frontend Notes:
 Sql query input can accept both Natural language and SQL queries hence it is compulsory to add a semi-colon at the end.
 
+Database:
+A databse is already attached, in order to test you could delete it and then upload a csv of your choice. 
+
 
 Technologies Used and Approach Followed
 Technologies Used
@@ -46,6 +49,8 @@ Created a FastAPI app to handle two main endpoints:
 /sqlquery: Accepts raw SQL queries as strings, executes them safely against the database, and returns results as JSON.
 
 Implemented error handling for invalid queries and unexpected data formats.
+
+Implemented some helper functions for the simple agent in order to get the table name and colums to sent to openai
 
 Frontend Development (React)
 
